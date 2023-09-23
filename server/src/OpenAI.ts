@@ -1,5 +1,5 @@
 import OpenAI from 'openai';
-import fs from 'fs';
+import * as fs from 'fs';
 
 const openai = new OpenAI({
     organization: process.env.OPENAI_ORG,

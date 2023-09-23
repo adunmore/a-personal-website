@@ -1,5 +1,4 @@
 import './App.css'
-import ServerStyleForm from './ServerStyleForm'
 import StyleForm from './StyleForm'
 
 export default function App() {

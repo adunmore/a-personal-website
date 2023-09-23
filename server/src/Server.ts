@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json())
 
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 
 app.get('/api/openaiTest', (req: Request, res: Response) => {

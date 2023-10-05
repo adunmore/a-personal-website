@@ -1,0 +1,23 @@
+name: build-app
+on: [push]
+  branches:
+    - 'main'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code 
+        uses: actions/checkout@v4
+        
+      - name: Set up SSH key
+        run: |
+          echo "${{ secrets.PRIVATE_KEY }}" > deploy_key
+          chmod 600 deploy_key
+          ssh-keyscan 129.48.213 >> ~/.ssh/known_hosts
+          eval "$(ssh-agent -s)"
+          ssh-add deploy_key
+          echo "DOCKER_HOST=ssh://dockeruser@$HOST_ADDRESS"
+
+      - name: Docker build and deploy
+        run: docker-compose up --build -d
+      

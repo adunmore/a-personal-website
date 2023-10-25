@@ -14,10 +14,10 @@ jobs:
         run: |
           echo "${{ secrets.PRIVATE_KEY }}" > deploy_key
           chmod 600 deploy_key
-          mkdir -p ~/.ssh
-          echo ${{ secrets.HOST_ENTRIES }} >> ~/.ssh/known_hosts
-          eval "$(ssh-agent -s)"
           ssh-add deploy_key
+          mkdir -p ~/.ssh
+          echo "${{ secrets.HOST_ENTRIES }}" >> ~/.ssh/known_hosts
+          eval "$(ssh-agent -s)"
           echo "DOCKER_HOST=ssh://dockeruser@129.213.48.213"
 
       - name: Docker build and deploy

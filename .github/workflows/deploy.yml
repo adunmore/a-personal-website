@@ -11,17 +11,16 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up SSH key
-        env: 
-          DEPLOY_KEY: ${{ secrets.PRIVATE_KEY }}
         run: |
           eval "$(ssh-agent -s)"
           mkdir -p ~/.ssh
-          echo "$DEPLOY_KEY" > ~/.ssh/deploy_key
+          echo "${{ secrets.PRIVATE_KEY }}" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
           ssh-add ~/.ssh/deploy_key
           echo "${{ secrets.HOST_ENTRIES }}" > ~/.ssh/known_hosts
-          echo "DOCKER_HOST=ssh://dockeruser@129.213.48.213"
-
+          
       - name: Docker build and deploy
-        run: docker-compose up --build -d
+        run: |
+          echo "DOCKER_HOST=ssh://dockeruser@129.213.48.213"
+          docker-compose up --build -d
       

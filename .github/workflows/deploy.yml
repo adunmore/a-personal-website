@@ -11,6 +11,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up SSH key
+        env:
+          OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
         run: |
           eval "$(ssh-agent -s)"
           mkdir -p ~/.ssh
@@ -18,11 +20,5 @@ jobs:
           chmod 600 ~/.ssh/deploy_key
           ssh-add ~/.ssh/deploy_key
           echo "${{ secrets.HOST_ENTRIES }}" > ~/.ssh/known_hosts
-          
-      - name: Docker build and deploy
-        env: 
-          OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
-        run: |
           export DOCKER_HOST=ssh://dockeruser@129.213.48.213
           docker-compose up --build -d
-      

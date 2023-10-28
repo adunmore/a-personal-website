@@ -21,6 +21,6 @@ jobs:
           
       - name: Docker build and deploy
         run: |
-          echo "DOCKER_HOST=ssh://dockeruser@129.213.48.213"
+          export DOCKER_HOST=ssh://dockeruser@129.213.48.213
           docker-compose up --build -d
       

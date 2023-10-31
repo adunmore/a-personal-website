@@ -2,7 +2,6 @@ import OpenAI from 'openai';
 import * as fs from 'fs';
 
 const openai = new OpenAI({
-    organization: process.env.OPENAI_ORG,
     apiKey: process.env.OPENAI_KEY,
 })
 

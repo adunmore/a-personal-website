@@ -8,10 +8,11 @@ export default {
     entry: './src/index.tsx',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        clean: true
     },
     resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.jsx'],
+        extensions: ['.ts', '.tsx', '.js'],
     },
     module: {
         rules: [
@@ -19,8 +20,7 @@ export default {
                 test: /\.tsx?$/,
                 use: 'ts-loader',
                 exclude: /node_modules/,
-            },
-            {
+            }, {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader'],
             }
@@ -32,13 +32,13 @@ export default {
         }),
         new CopyWebpackPlugin({
             patterns: [
-                { 
-                    from: 'public', 
-                    to: '.' , 
+                {
+                    from: 'public',
+                    to: '.',
                     globOptions: {
                         ignore: ['**/index.html']
                     }
-                },{
+                }, {
                     from: 'src/App.css', to: '.'
                 },
             ]

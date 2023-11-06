@@ -14,7 +14,7 @@ export default function App() {
 
                         My goal is for this site to be a sandbox to change that. A few features I have in mind, which I've picked to guide me to learn some specific technologies:
                     </p>
-                    <ul>
+                    <ol>
                         <li>
                             Implement CI/CD. Specifically, automatically deploy the site when I merge changes to Github. I've worked with Docker and Github Actions and stuff before but I want to refresh this.
                         </li>
@@ -29,8 +29,13 @@ export default function App() {
 
                             Like lots of people I've used chatgpt a bunch for personal stuff but I'm curious to build an actual app with it! And I'll learn the OpenAI API along the way.
                         </li>
-                    </ul>
-                    Here's some more test text
+                    </ol>
+                    <p>
+                        As of today, I've implemented items 1 and 4! Although my implementation of 4 is pretty basic, it pretty much works. Try it out in the sidebar on the right!
+                    </p>
+                    <p>
+                        Also: Check out the repo where I'm building this: <a href='http://github.com/adunmore/a-personal-website'>github.com/adunmore/a-personal-website</a>
+                    </p>
                 </section>
             </main>
             <div className="sidebar">

@@ -1,4 +1,74 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%
+}
+
 main {
-  text-align: center;
-  vertical-align: center;
+  flex: 1;
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+  padding: 15px;
+  background-color: #fff;
+}
+
+main section {
+  background-color: hsl(0, 30%, 95%);
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px hsl(0, 100%, 5%);
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.style-controls {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  right: 0;
+  margin: 50px 25px 50px 25px;
+  padding: 10px;
+  border-radius: 8px;
+  height: auto;
+  width: 300px;
+  /* border: 1px solid black; */
+  box-shadow: 0 0 10px 2px hsl(0, 10%, 80%);
+
+}
+
+#stylePromptForm {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin: auto;
+}
+
+#stylePromptInput {
+  display: flex;
+  margin: auto;
+  text-overflow: ellipsis;
+  padding: 6px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+  overflow: hidden;
+}
+
+#stylePromptInput:focus {
+  size: fit-content;
+}
+
+#stylePromptSubmit {
+  display: flex;
+  margin-top: 10px;
+  width: 30%
 }

@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "ts-node": "^10.9.1",
+    "tsc": "^2.0.4"
+  },
+  "dependencies": {
+    "openai": "^4.17.4"
+  }
+}

@@ -1,27 +1,7 @@
 Your job is to take a natural language description of a visual aesthetic for a website, and translate it into a css stylesheet which will be applied to the website. Return only valid CSS. If you need to send natural language, represent it only in the form of a css comment (although it will be ignored and inaccessible to the user, as the css you return will be applied directly to the website.)
 
+Do not assume you can reference external resources (for example, do not reference images for textures with the 'URL' function). If you want to create a background-image texture, use CSS-only APIs to describe geometric forms. Do not rely on external resources.
+
 Here is a preprocessed version of the html for the site. Another LLM has processed the html to remove irrelevant information to create a minimal useful representation of the site so you know how to style it.
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <style type="text/css">main {text-align: center;vertical-align: center;}</style>
-</head>
-<body>
-    <div id="root">
-        <main>React ⚛️ + Vite ⚡ + Replit 🌀
-            <section>
-                <p>Here is some test text!
-                    <li>list bullet one</li>
-                    <li>List bullet two</li>
-                </p>
-            </section>
-            <form>
-                <input type="text" value="">
-                <button type="submit">Apply Styles</button>
-            </form>
-        </main>
-    </div>
-</body>
-</html>
+Page Structure:

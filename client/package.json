@@ -1,11 +1,12 @@
 {
-  "name": "react-typescript",
+  "name": "a-personal-website-client",
   "version": "1.0.0",
   "type": "module",
-  "description": "React TypeScript on Replit, using Vite bundler",
+  "description": "Frontend project for a personal website",
   "scripts": {
     "dev": "webpack serve --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "render": "react-snap"
   },
   "proxy": "http://localhost:3001",
   "keywords": [],
@@ -25,10 +26,22 @@
     "copy-webpack-plugin": "^11.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-snap": "^1.23.0",
+    "static-site-generator-webpack-plugin": "^3.4.2",
     "ts-loader": "^9.5.0",
     "typescript": "^5.2.2",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
+  },
+  "reactSnap": {
+    "source": "dist",
+    "destination": "dist/prerendered",
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--disable-infobars",
+      "--window-size=1366,768"
+    ]
   }
 }

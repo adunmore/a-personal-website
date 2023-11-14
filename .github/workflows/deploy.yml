@@ -5,6 +5,8 @@ on:
       - main
 jobs:
   build:
+    env:
+      OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code 
@@ -16,11 +18,9 @@ jobs:
           npm install
           npm run build
           npm run render
-          cd npx ts-node ../scripts/compress.ts ./dist/ ../server/src/prompts/projectDescription.txt
+          npx ts-node ../scripts/compress.ts ./dist/ ../server/src/prompts/projectDescription.txt
 
       - name: Build And Deploy Docker Images
-        env:
-          OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
         run: |
           eval "$(ssh-agent -s)"
           mkdir -p ~/.ssh

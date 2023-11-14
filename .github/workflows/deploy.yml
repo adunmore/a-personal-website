@@ -16,7 +16,6 @@ jobs:
           npm install
           npm run build
           npm run render
-          cp -r client/dist/prerendered
           cd npx ts-node ../scripts/compress.ts ./dist/ ../server/src/prompts/projectDescription.txt
 
       - name: Build And Deploy Docker Images

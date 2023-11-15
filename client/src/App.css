@@ -13,7 +13,7 @@ main {
   background-color: #fff;
 }
 
-main section {
+section {
   background-color: hsl(0, 30%, 95%);
   padding: 20px;
   margin: 20px 0;
@@ -39,36 +39,54 @@ main section {
   border-radius: 8px;
   height: auto;
   width: 300px;
-  /* border: 1px solid black; */
   box-shadow: 0 0 10px 2px hsl(0, 10%, 80%);
-
 }
 
-#stylePromptForm {
+.styleInputSubmit {
+  height: auto;
+  align-self: flex-end;
+  margin: 0;
+  width: auto;
+  background-color: white;
+  border: none
+}
+
+.styleInputSubmit:disabled {
+  opacity: .5;
+}
+
+/* .styleInputSubmit:disabled svg {
+  /* filter: grayscale(100%); */
+/* } */
+
+.styleInputForm {
   display: flex;
   flex-direction: column;
-  width: 200px;
+  width: 300px;
   margin: auto;
 }
 
-#stylePromptInput {
+.styleInputFieldContainer {
   display: flex;
-  margin: auto;
-  text-overflow: ellipsis;
-  padding: 6px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: none;
-  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 90%
 }
 
-#stylePromptInput:focus {
-  size: fit-content;
+.styleInputField {
+  width: 100%;
+  font-size: large;
 }
 
-#stylePromptSubmit {
+.styleInputField:focus {
+  outline: none;
+}
+
+.styleInputContainer {
+  /* border: solid gray .5px; */
+  /* box-shadow: 0px 0px 5px gray; */
   display: flex;
-  margin-top: 10px;
-  width: 30%
+  margin: 0px;
+  width: 100%;
 }

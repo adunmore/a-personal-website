@@ -39,9 +39,9 @@ export default function App() {
                 </section>
             </main>
             <div className="sidebar">
-                <section className="style-controls">
+                <div className="style-controls">
                     <StyleForm />
-                </section>
+                </div>
             </div>
         </div >
     )

@@ -39,13 +39,17 @@ export default function StyleForm() {
     function handleEnter(event: React.KeyboardEvent<HTMLTextAreaElement>) {
         if (event.code == 'Enter' && !event.shiftKey) {
             event.preventDefault();
-            formRef.current?.requestSubmit();
+            if (formRef.current) {
+                formRef.current.requestSubmit();
+            }
         }
     }
 
     function handleClick(event: React.MouseEvent) {
         event.preventDefault();
-        fieldRef.current?.focus();
+        if (fieldRef.current) {
+            fieldRef.current.focus();
+        }
     }
 
     function handleChange(event: React.ChangeEvent<HTMLTextAreaElement>) {

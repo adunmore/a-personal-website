@@ -28,7 +28,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-snap": "^1.23.0",
-    "static-site-generator-webpack-plugin": "^3.4.2",
     "ts-loader": "^9.5.0",
     "typescript": "^5.2.2",
     "webpack": "^5.89.0",
@@ -36,7 +35,7 @@
     "webpack-dev-server": "^4.15.1"
   },
   "reactSnap": {
-    "source": "dist",
+    "source": "./dist/",
     "destination": "dist/prerendered",
     "puppeteerArgs": [
       "--no-sandbox",
